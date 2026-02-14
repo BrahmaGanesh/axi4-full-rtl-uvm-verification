@@ -1,5 +1,5 @@
 //=====================================================
-// Project     : AXI4 Slave RTL
+// Project     : AXI4 UVM VERIFICATION
 // File        : axi4_if.sv
 // Author      : Brahma Ganesh Katrapalli
 // Date        : 14-02-2026
