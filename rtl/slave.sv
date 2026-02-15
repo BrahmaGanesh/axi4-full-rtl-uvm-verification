@@ -237,6 +237,7 @@ module axi_slave #(
             ARREADY         <= 0;
             RVALID          <= 0;
           	RRESP 			<= 2'b00;
+            RDATA           <= 0;
           	RLAST			<= 0;
             rd_len_reg      <= 0;
             rd_size_reg     <= 0;
