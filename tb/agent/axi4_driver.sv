@@ -2,12 +2,13 @@
 // Project     : AXI4 UVM VERIFICATION
 // File        : axi4_driver.sv
 // Author      : Brahma Ganesh Katrapalli
-// Date        : 15-02-2026
-// Version     : 1.0
+// Date        : 18-02-2026
+// Version     : 1.1
 // Description : UVM driver for AXI4 protocol handling
 //               write and read transactions. Implements
-//               reset, phase control, and FIXED burst
-//               mode stimulus generation.
+//               reset, phase control, and unified burst
+//               mode stimulus generation with improved
+//               logging and enum-based operation handling.
 //=====================================================
 
 class axi4_driver extends uvm_driver #(axi4_transaction);
@@ -41,32 +42,7 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
     task reset_phase(uvm_phase phase);
         super.reset_phase(phase);
         phase.raise_objection(this, "driver reset");
-            vif.ARESETn <= 0;
-            
-            vif.AWADDR  <= 0;
-            vif.AWBURST <= 0;
-            vif.AWSIZE  <= 0;
-            vif.AWLEN   <= 0;
-      	    vif.AWVALID <= 0;
-            
-            vif.WDATA   <= 0;
-            vif.WSTRB   <= 0;
-            vif.WLAST   <= 0;
-            vif.WVALID  <= 0;
-
-            
-            vif.BREADY <= 0;
-            
-            vif.ARADDR  <= 0;
-            vif.ARBURST <= 0;
-            vif.ARSIZE  <= 0;
-            vif.ARLEN   <= 0;
-            vif.ARVALID <= 0;
-
-            vif.RREADY <= 0;
-            #40;
-            vif.ARESETn <= 1;
-        `uvm_info("PHASE", "Reset applied...", UVM_LOW)
+            reset_dut();
         phase.drop_objection(this, "driver reset");
     endtask
 
@@ -79,25 +55,54 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
         @(posedge vif.ARESETn);
         forever begin
             seq_item_port.get_next_item(tr);
-            case(tr.AWBURST)
-                2'b00 : begin
-                            fixed_write();
-                            fixed_read();
-                        end
-                default: `uvm_error("DRIVER", "Unsupported burst type")
-            endcase
+            if(tr.op == RESET) begin
+                reset_dut();
+            end
+            else begin
+                write($sformatf("%s", tr.op.name()));
+                read($sformatf("%s", tr.op.name()));
+            end
             seq_item_port.item_done();
         end
     endtask
+
+    task reset_dut();
+        vif.ARESETn <= 0;
+            
+        vif.AWADDR  <= 0;
+        vif.AWBURST <= 0;
+        vif.AWSIZE  <= 0;
+        vif.AWLEN   <= 0;
+      	vif.AWVALID <= 0;
+            
+        vif.WDATA   <= 0;
+        vif.WSTRB   <= 0;
+        vif.WLAST   <= 0;
+        vif.WVALID  <= 0;
+
+            
+        vif.BREADY <= 0;
+            
+        vif.ARADDR  <= 0;
+        vif.ARBURST <= 0;
+        vif.ARSIZE  <= 0;
+        vif.ARLEN   <= 0;
+        vif.ARVALID <= 0;
+
+        vif.RREADY <= 0;
+        #40;
+        vif.ARESETn <= 1;
+        `uvm_info("PHASE", "Reset applied...", UVM_LOW)
+    endtask
   
-    task fixed_write();
+    task write(input string mode);
         @(posedge vif.ACLK);
-        `uvm_info(get_type_name(),"FIXED Mode write transaction Start.....", UVM_LOW)
+        `uvm_info(get_type_name(),$sformatf(" %s Mode write transaction Start.....",mode), UVM_LOW)
         vif.AWVALID <= 1;
-        vif.AWADDR <= tr.AWADDR;
-        vif.AWBURST <= 2'b00;
-        vif.AWSIZE <= 3'b010;
-        vif.AWLEN <= 3;
+        vif.AWADDR  <= tr.AWADDR;
+        vif.AWBURST <= tr.AWBURST;
+        vif.AWSIZE  <= tr.AWSIZE;
+        vif.AWLEN   <= tr.AWLEN;
         wait(vif.AWREADY);
         @(posedge vif.ACLK);
         vif.AWVALID <= 0;
@@ -117,17 +122,17 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
         wait(vif.BVALID);
         @(posedge vif.ACLK);
         vif.BREADY <= 0;
-        `uvm_info(get_type_name(),"FIXED Mode write transaction Completed.....", UVM_LOW)
+        `uvm_info(get_type_name(),$sformatf(" %s Mode write transaction Completed.....",mode), UVM_LOW)
   	endtask
     
-    task fixed_read();
+    task read(input string mode);
         @(posedge vif.ACLK);
-        `uvm_info(get_type_name(),"FIXED Mode Read transaction Start.....", UVM_LOW)
+        `uvm_info(get_type_name(),$sformatf(" %s Mode Read transaction Start.....",mode), UVM_LOW)
         vif.ARVALID <= 1;
         vif.ARADDR  <= tr.AWADDR;
-        vif.ARBURST <= 2'b00;   
-        vif.ARSIZE  <= 3'b010;  
-        vif.ARLEN   <= 3;       
+        vif.ARBURST <= tr.AWBURST;   
+        vif.ARSIZE  <= tr.AWSIZE;  
+        vif.ARLEN   <= tr.AWLEN;       
         wait(vif.ARREADY);
         @(posedge vif.ACLK);
         vif.ARVALID <= 0;
@@ -138,6 +143,7 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
             @(posedge vif.ACLK);
         end while (!vif.RLAST);
         vif.RREADY <= 0;
-        `uvm_info(get_type_name(),"FIXED Mode Read transaction Completed.....", UVM_LOW)
+        `uvm_info(get_type_name(),$sformatf(" %s Mode Read transaction Completed.....",mode), UVM_LOW)
     endtask
+
 endclass
