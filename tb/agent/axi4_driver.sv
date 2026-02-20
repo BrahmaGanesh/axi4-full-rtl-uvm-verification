@@ -2,8 +2,8 @@
 // Project     : AXI4 UVM VERIFICATION
 // File        : axi4_driver.sv
 // Author      : Brahma Ganesh Katrapalli
-// Date        : 18-02-2026
-// Version     : 1.1
+// Date        : 20-02-2026
+// Version     : 1.2
 // Description : UVM driver for AXI4 protocol handling
 //               write and read transactions. Implements
 //               reset, phase control, and unified burst
@@ -136,7 +136,8 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
         wait(vif.ARREADY);
         @(posedge vif.ACLK);
         vif.ARVALID <= 0;
-
+        
+        @(posedge vif.ACLK);
         vif.RREADY <= 1;
         do begin
             wait(vif.RVALID);
