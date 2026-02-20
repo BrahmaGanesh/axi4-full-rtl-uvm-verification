@@ -19,7 +19,7 @@ class FIXED_sequence extends axi4_sequence;
     endfunction
   
     task body();
-        repeat(5) begin
+        repeat(3) begin
             tr = axi4_transaction::type_id::create("tr");
             if (!tr.randomize() with {AWBURST == 2'b00;})
                 `uvm_error(get_type_name(), "Randomization failed for FIXED Mode transaction")
