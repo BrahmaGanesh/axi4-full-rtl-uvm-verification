@@ -215,11 +215,14 @@ module axi_slave #(
                                     end
                                 end
               W_ERROR		: 	begin
-                					WREADY <= 0;
-                                    if(BVALID && BREADY) begin
-                  	                    BVALID <= 0;
-                	                    wr_state <= W_IDLE;
-                                    end
+                					 if (WVALID) begin
+        								WREADY <= 1;
+        								if (WLAST) begin
+            								BRESP   <= 2'b10;
+            								BVALID  <= 1;
+            								wr_state <= W_IDLE;
+        								end
+    								end
               					end
                 B_RESP      :   begin
                                     if(BVALID && BREADY) begin
@@ -285,6 +288,7 @@ module axi_slave #(
                                             rd_state    <= R_TRANSFER;
                                         end
                                         else begin
+                                          	rd_beat_cnt     <= ARLEN + 1;
                                             RRESP       <= 2'b10;
                                             RVALID      <= 1;
                                             ARREADY     <= 0;
@@ -294,24 +298,22 @@ module axi_slave #(
                                 end
                 R_TRANSFER  :   begin
                                     ARREADY <= 0;
-                                    RDATA   <= mem[rd_addr_reg >> $clog2(DATA_WIDTH/8)];
 
                                     if(RVALID && RREADY) begin
-                                        rd_addr_reg <= next_addr(rd_addr_reg, rd_burst_reg, rd_size_reg, rd_wrap_boundary_reg, rd_len_reg); 
-                                        rd_beat_cnt <= rd_beat_cnt - 1;
-                                        RLAST   <= (rd_beat_cnt == 1);
-                                    end
-
-                                    
-                                    if(RVALID && RREADY && RLAST) begin
+                                      RDATA   <= mem[rd_addr_reg >> $clog2(DATA_WIDTH/8)];
+                                      if(RLAST) begin
                                         rd_state    <= R_IDLE;
                                         RVALID      <= 0;
                                         RRESP       <= 2'b00;
                                     end
+                                        rd_addr_reg <= next_addr(rd_addr_reg, rd_burst_reg, rd_size_reg, rd_wrap_boundary_reg, rd_len_reg); 
+                                        rd_beat_cnt--;
+                                        RLAST   <= (rd_beat_cnt == 1);
+                                    end
                                 end
               R_ERROR		:	begin
               					    if(RVALID && RREADY) begin
-      									rd_beat_cnt <= rd_beat_cnt - 1;
+      									rd_beat_cnt--;
       									RLAST <= (rd_beat_cnt == 1);
       									if(RLAST) begin
          									RVALID <= 0;
