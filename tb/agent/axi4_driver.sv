@@ -16,6 +16,7 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
 
     virtual axi4_interface vif;
     axi4_transaction tr;
+    int beat;
 
     function new ( string name = "axi4_driver", uvm_component parent = null);
         super.new(name, parent);
@@ -81,7 +82,7 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
         vif.WVALID  <= 0;
 
             
-        vif.BREADY <= 0;
+        vif.BREADY  <= 0;
             
         vif.ARADDR  <= 0;
         vif.ARBURST <= 0;
@@ -89,7 +90,8 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
         vif.ARLEN   <= 0;
         vif.ARVALID <= 0;
 
-        vif.RREADY <= 0;
+        vif.RREADY  <= 0;
+        vif.beat_cnt <=0;
         #40;
         vif.ARESETn <= 1;
         `uvm_info("PHASE", "Reset applied...", UVM_LOW)
@@ -111,12 +113,15 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
             vif.WVALID <= 1;
             vif.WDATA  <= tr.WDATA + i;
             vif.WSTRB  <= 4'b1111;
+            beat       <= beat + 1;
+            vif.beat_cnt <= beat;
             vif.WLAST  <= (i == tr.AWLEN);
             wait(vif.WREADY && vif.WVALID);
             @(posedge vif.ACLK);
         end
         vif.WVALID <= 0;
         vif.WLAST  <= 0;
+        beat       <= 0;
 
         vif.BREADY <= 1;
         wait(vif.BVALID);
@@ -141,9 +146,12 @@ class axi4_driver extends uvm_driver #(axi4_transaction);
         vif.RREADY <= 1;
         do begin
             wait(vif.RVALID);
+            beat         <= beat + 1;
+            vif.beat_cnt <= beat;
             @(posedge vif.ACLK);
         end while (!vif.RLAST);
         vif.RREADY <= 0;
+        beat       <= 0;
         `uvm_info(get_type_name(),$sformatf(" %s Mode Read transaction Completed.....",mode), UVM_LOW)
     endtask
 
