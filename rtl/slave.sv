@@ -2,8 +2,8 @@
 // Project     : AXI4 Slave RTL
 // File        : slave.sv
 // Author      : Brahma Ganesh Katrapalli
-// Date        : 14-02-2026
-// Version     : 1.0
+// Date        : 20-02-2026
+// Version     : 1.1
 // Description : AXI4-compliant slave module with
 //               write/read channel handling,
 //               burst support, and error checks
