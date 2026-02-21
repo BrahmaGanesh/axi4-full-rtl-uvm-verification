@@ -32,6 +32,7 @@ The AXI4 Slave RTL supports:
 
 ## 📂 3. Project Directory Structure
 
+```
 AXI4_UVM_Verification/
 ├── docs/
 │   ├── coverage_summary.png
@@ -96,8 +97,7 @@ AXI4_UVM_Verification/
 │    └── axi4_reset_waveform.png
 │
 └── README.md
-
-
+```
 
 ---
 
