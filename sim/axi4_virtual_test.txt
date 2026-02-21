@@ -1,0 +1,219 @@
+UVM_INFO @ 0: reporter [RNTST] Running test axi4_virtual_test...
+UVM_INFO /apps/vcsmx/vcs/X-2025.06-SP1//etc/uvm-1.2/src/base/uvm_root.svh(594) @ 0: reporter [UVMTOP] UVM testbench topology:
+--------------------------------------------------------------
+Name                       Type                    Size  Value
+--------------------------------------------------------------
+uvm_test_top               axi4_virtual_test       -     @341 
+  axi4_env                 axi4_env                -     @354 
+    cov                    axi4_coverage           -     @387 
+      cov_export           uvm_analysis_imp        -     @396 
+    m_agent                axi4_agent              -     @369 
+      drv                  axi4_driver             -     @544 
+        rsp_port           uvm_analysis_port       -     @563 
+        seq_item_port      uvm_seq_item_pull_port  -     @553 
+      mon                  axi4_monitor            -     @573 
+        mon_ap             uvm_analysis_port       -     @583 
+      seqr                 axi4_sequencer          -     @407 
+        rsp_export         uvm_analysis_export     -     @416 
+        seq_item_export    uvm_seq_item_pull_imp   -     @534 
+        arbitration_queue  array                   0     -    
+        lock_queue         array                   0     -    
+        num_last_reqs      integral                32    'd1  
+        num_last_rsps      integral                32    'd1  
+    soc                    axi4_scoreboard         -     @378 
+      soc_export           uvm_analysis_imp        -     @599 
+--------------------------------------------------------------
+
+UVM_INFO axi4_driver.sv(35) @ 0: uvm_test_top.axi4_env.m_agent.drv [axi4_driver] Start of Simulation...
+UVM_INFO axi4_driver.sv(40) @ 0: uvm_test_top.axi4_env.m_agent.drv [PHASE] Preparing reset...
+UVM_INFO axi4_scoreboard.sv(69) @ 5: uvm_test_top.axi4_env.soc [[SCO]] Reset = 0
+UVM_INFO axi4_scoreboard.sv(69) @ 15: uvm_test_top.axi4_env.soc [[SCO]] Reset = 0
+UVM_INFO axi4_scoreboard.sv(69) @ 25: uvm_test_top.axi4_env.soc [[SCO]] Reset = 0
+UVM_INFO axi4_scoreboard.sv(69) @ 35: uvm_test_top.axi4_env.soc [[SCO]] Reset = 0
+UVM_INFO axi4_driver.sv(97) @ 40: uvm_test_top.axi4_env.m_agent.drv [PHASE] Reset applied...
+UVM_INFO axi4_driver.sv(52) @ 40: uvm_test_top.axi4_env.m_agent.drv [PHASE] Reset Completed...
+UVM_INFO axi4_driver.sv(102) @ 45: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 155: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 165: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =0 
+UVM_INFO axi4_monitor.sv(68) @ 165: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 165: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 175: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 295: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_scoreboard.sv(103) @ 295: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=0 <==> mem=0
+UVM_INFO axi4_driver.sv(155) @ 295: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode Read transaction Completed.....
+UVM_INFO axi4_driver.sv(102) @ 305: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 475: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 485: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =0 
+UVM_INFO axi4_monitor.sv(68) @ 485: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 485: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 495: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 675: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_scoreboard.sv(103) @ 675: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=0 <==> mem=0
+UVM_INFO axi4_driver.sv(155) @ 675: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode Read transaction Completed.....
+UVM_INFO axi4_driver.sv(102) @ 685: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 725: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 735: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =0 
+UVM_INFO axi4_monitor.sv(68) @ 735: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 735: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 745: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 795: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_scoreboard.sv(103) @ 795: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=0 <==> mem=0
+UVM_INFO axi4_driver.sv(155) @ 795: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  FIXED Mode Read transaction Completed.....
+UVM_INFO axi4_driver.sv(102) @ 805: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 925: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 935: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =0 
+UVM_INFO axi4_monitor.sv(68) @ 935: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 935: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 945: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 1075: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3b6 <==> mem=694ca3b6
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3b7 <==> mem=694ca3b7
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3b8 <==> mem=694ca3b8
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3b9 <==> mem=694ca3b9
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3ba <==> mem=694ca3ba
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3bb <==> mem=694ca3bb
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3bc <==> mem=694ca3bc
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3bd <==> mem=694ca3bd
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3be <==> mem=694ca3be
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=694ca3bf <==> mem=694ca3bf
+UVM_INFO axi4_scoreboard.sv(115) @ 1075: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=0 <==> mem=0
+UVM_INFO axi4_driver.sv(155) @ 1075: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode Read transaction Completed.....
+UVM_INFO axi4_driver.sv(102) @ 1085: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 1245: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 1255: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =0 
+UVM_INFO axi4_monitor.sv(68) @ 1255: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 1255: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 1265: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 1435: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542ef1 <==> mem=fb542ef1
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542ef2 <==> mem=fb542ef2
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542ef3 <==> mem=fb542ef3
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542ef4 <==> mem=fb542ef4
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542ef5 <==> mem=fb542ef5
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542ef6 <==> mem=fb542ef6
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542ef7 <==> mem=fb542ef7
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542ef8 <==> mem=fb542ef8
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542ef9 <==> mem=fb542ef9
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542efa <==> mem=fb542efa
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542efb <==> mem=fb542efb
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542efc <==> mem=fb542efc
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542efd <==> mem=fb542efd
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=fb542efe <==> mem=fb542efe
+UVM_INFO axi4_scoreboard.sv(115) @ 1435: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=0 <==> mem=0
+UVM_INFO axi4_driver.sv(155) @ 1435: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode Read transaction Completed.....
+UVM_INFO axi4_driver.sv(102) @ 1445: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 1525: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 1535: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =0 
+UVM_INFO axi4_monitor.sv(68) @ 1535: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 1535: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 1545: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 1635: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_scoreboard.sv(115) @ 1635: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f9542075 <==> mem=f9542075
+UVM_INFO axi4_scoreboard.sv(115) @ 1635: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f9542076 <==> mem=f9542076
+UVM_INFO axi4_scoreboard.sv(115) @ 1635: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f9542077 <==> mem=f9542077
+UVM_INFO axi4_scoreboard.sv(115) @ 1635: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f9542078 <==> mem=f9542078
+UVM_INFO axi4_scoreboard.sv(115) @ 1635: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f9542079 <==> mem=f9542079
+UVM_INFO axi4_scoreboard.sv(115) @ 1635: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f954207a <==> mem=f954207a
+UVM_INFO axi4_scoreboard.sv(115) @ 1635: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=0 <==> mem=0
+UVM_INFO axi4_driver.sv(155) @ 1635: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  INCR Mode Read transaction Completed.....
+UVM_INFO axi4_driver.sv(102) @ 1645: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 1735: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 1745: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =0 
+UVM_INFO axi4_monitor.sv(68) @ 1745: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 1745: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 1755: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 1855: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_scoreboard.sv(115) @ 1855: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=2725c155 <==> mem=2725c155
+UVM_INFO axi4_scoreboard.sv(115) @ 1855: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=2725c156 <==> mem=2725c156
+UVM_INFO axi4_scoreboard.sv(115) @ 1855: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=2725c157 <==> mem=2725c157
+UVM_INFO axi4_scoreboard.sv(115) @ 1855: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=2725c158 <==> mem=2725c158
+UVM_INFO axi4_scoreboard.sv(115) @ 1855: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=2725c159 <==> mem=2725c159
+UVM_INFO axi4_scoreboard.sv(115) @ 1855: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=2725c15a <==> mem=2725c15a
+UVM_INFO axi4_scoreboard.sv(115) @ 1855: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=2725c15b <==> mem=2725c15b
+UVM_INFO axi4_scoreboard.sv(115) @ 1855: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=0 <==> mem=0
+UVM_INFO axi4_driver.sv(155) @ 1855: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode Read transaction Completed.....
+UVM_INFO axi4_driver.sv(102) @ 1865: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 1935: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 1945: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =0 
+UVM_INFO axi4_monitor.sv(68) @ 1945: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 1945: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 1955: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 2035: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_scoreboard.sv(115) @ 2035: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f44e86e0 <==> mem=f44e86e0
+UVM_INFO axi4_scoreboard.sv(115) @ 2035: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f44e86e1 <==> mem=f44e86e1
+UVM_INFO axi4_scoreboard.sv(115) @ 2035: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f44e86e2 <==> mem=f44e86e2
+UVM_INFO axi4_scoreboard.sv(115) @ 2035: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f44e86e3 <==> mem=f44e86e3
+UVM_INFO axi4_scoreboard.sv(115) @ 2035: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=f44e86e4 <==> mem=f44e86e4
+UVM_INFO axi4_scoreboard.sv(115) @ 2035: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=0 <==> mem=0
+UVM_INFO axi4_driver.sv(155) @ 2035: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode Read transaction Completed.....
+UVM_INFO axi4_driver.sv(102) @ 2045: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 2135: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 2145: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =0 
+UVM_INFO axi4_monitor.sv(68) @ 2145: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 2145: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 2155: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 2255: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_scoreboard.sv(115) @ 2255: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=85db4dca <==> mem=85db4dca
+UVM_INFO axi4_scoreboard.sv(115) @ 2255: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=85db4dcb <==> mem=85db4dcb
+UVM_INFO axi4_scoreboard.sv(115) @ 2255: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=85db4dcc <==> mem=85db4dcc
+UVM_INFO axi4_scoreboard.sv(115) @ 2255: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=85db4dcd <==> mem=85db4dcd
+UVM_INFO axi4_scoreboard.sv(115) @ 2255: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=85db4dce <==> mem=85db4dce
+UVM_INFO axi4_scoreboard.sv(115) @ 2255: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=85db4dcf <==> mem=85db4dcf
+UVM_INFO axi4_scoreboard.sv(115) @ 2255: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=85db4dd0 <==> mem=85db4dd0
+UVM_INFO axi4_scoreboard.sv(115) @ 2255: uvm_test_top.axi4_env.soc [[SCO]] PASS rdata=0 <==> mem=0
+UVM_INFO axi4_driver.sv(155) @ 2255: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  WRAP Mode Read transaction Completed.....
+UVM_INFO axi4_driver.sv(102) @ 2265: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  ERROR Mode write transaction Start.....
+UVM_INFO axi4_monitor.sv(59) @ 2365: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write burst capture completed
+UVM_INFO axi4_monitor.sv(63) @ 2375: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] B channel handshake detected =2 
+UVM_INFO axi4_monitor.sv(68) @ 2375: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Write channel capture completed
+UVM_INFO axi4_driver.sv(130) @ 2375: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  ERROR Mode write transaction Completed.....
+UVM_INFO axi4_driver.sv(135) @ 2385: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  ERROR Mode Read transaction Start.....
+UVM_INFO axi4_monitor.sv(92) @ 2485: uvm_test_top.axi4_env.m_agent.mon [axi4_monitor] Read burst capture completed
+UVM_INFO axi4_driver.sv(155) @ 2485: uvm_test_top.axi4_env.m_agent.drv [axi4_driver]  ERROR Mode Read transaction Completed.....
+UVM_INFO axi4_scoreboard.sv(69) @ 2495: uvm_test_top.axi4_env.soc [[SCO]] Reset = 0
+UVM_INFO axi4_scoreboard.sv(69) @ 2505: uvm_test_top.axi4_env.soc [[SCO]] Reset = 0
+UVM_INFO axi4_scoreboard.sv(69) @ 2515: uvm_test_top.axi4_env.soc [[SCO]] Reset = 0
+UVM_INFO axi4_driver.sv(97) @ 2525: uvm_test_top.axi4_env.m_agent.drv [PHASE] Reset applied...
+UVM_INFO axi4_scoreboard.sv(69) @ 2525: uvm_test_top.axi4_env.soc [[SCO]] Reset = 0
+UVM_INFO /apps/vcsmx/vcs/X-2025.06-SP1//etc/uvm-1.2/src/base/uvm_objection.svh(1276) @ 2525: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO axi4_env.sv(51) @ 2525: uvm_test_top.axi4_env [axi4_env] Check Passed : no Mismatched 
+UVM_INFO axi4_env.sv(55) @ 2525: uvm_test_top.axi4_env [Report] Total Coverage    : 100
+UVM_INFO axi4_env.sv(56) @ 2525: uvm_test_top.axi4_env [Report] Total Reads       : 58
+UVM_INFO axi4_env.sv(57) @ 2525: uvm_test_top.axi4_env [Report] Total PASS        : 58
+UVM_INFO axi4_env.sv(58) @ 2525: uvm_test_top.axi4_env [Report] Total FAIL        : 0
+UVM_INFO axi4_env.sv(63) @ 2525: uvm_test_top.axi4_env [PHASE] Clean up phase.....
+UVM_INFO /apps/vcsmx/vcs/X-2025.06-SP1//etc/uvm-1.2/src/base/uvm_report_server.svh(904) @ 2525: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  161
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[PHASE]     5
+[RNTST]     1
+[Report]     4
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+[[SCO]]    66
+[axi4_driver]    41
+[axi4_env]     1
+[axi4_monitor]    40
+
+$finish called from file "/apps/vcsmx/vcs/X-2025.06-SP1//etc/uvm-1.2/src/base/uvm_root.svh", line 532.
+$finish at simulation time                 2525
+"axi4_interface.sv", 58: tb.vif.unnamed$$_0, 252 attempts, 10 match
+"axi4_interface.sv", 66: tb.vif.unnamed$$_1, 252 attempts, 10 match
+"axi4_interface.sv", 74: tb.vif.unnamed$$_2, 252 attempts, 19 match
+"axi4_interface.sv", 82: tb.vif.unnamed$$_3, 252 attempts, 9 match
+"axi4_interface.sv", 90: tb.vif.unnamed$$_4, 252 attempts, 10 match
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 2525 ns
+CPU Time:      0.550 seconds;       Data structure size:   0.3Mb
+Sat Feb 21 04:18:38 2026
+Finding VCD file...
+./waveform.vcd
+[2026-02-21 09:18:38 UTC] Opening EPWave...
+Done
