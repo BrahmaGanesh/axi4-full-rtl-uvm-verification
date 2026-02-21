@@ -1,4 +1,4 @@
-# AXI4 UVM Verification Project
+# AXI4 Protocol – RTL Design & UVM Verification
 
 ## 1. Project Overview
 
